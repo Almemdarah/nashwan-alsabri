@@ -1,279 +1,384 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>نشوان الصبري — لتربية وتسويق الدجاج، إب</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --parchment: #efe6d3; --parchment-dark: #e4d8bc; --ink: #2b2118; --ink-soft: #4a3d2e;
-    --amber: #c68a2e; --amber-deep: #a8721f; --rust: #7a3f24; --sage: #67744a;
-    --line: rgba(43,33,24,0.18); --radius: 3px;
-  }
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
-  body{ margin:0; background: var(--parchment); color: var(--ink); font-family: 'Tajawal', sans-serif; font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-  h1, h2, h3{ font-family: 'Markazi Text', 'Tajawal', serif; font-weight: 700; color: var(--ink); margin: 0; line-height: 1.2; }
-  a{ color: inherit; }
-  .wrap{ max-width: 1080px; margin: 0 auto; padding: 0 28px; }
-  header{ position: sticky; top: 0; z-index: 20; background: var(--parchment); border-bottom: 1px solid var(--line); }
-  .header-inner{ display:flex; align-items:center; justify-content: space-between; padding: 14px 0; gap: 16px; }
-  .brand{ display:flex; align-items:center; gap:12px; }
-  .brand img{ width:42px; height:42px; object-fit:cover; border-radius:50%; border:1px solid var(--line); }
-  .brand-text{ display:flex; flex-direction:column; }
-  .brand-name{ font-family:'Markazi Text', serif; font-weight:700; font-size:1.3rem; }
-  .brand-sub{ font-size:0.78rem; color: var(--ink-soft); }
-  .call-btn{ display:flex; align-items:center; gap:8px; background: var(--rust); color: var(--parchment); text-decoration:none; padding: 10px 18px; border-radius: var(--radius); font-weight: 700; font-size: 0.95rem; white-space: nowrap; }
-  .call-btn:hover{ background: var(--amber-deep); }
-  .hero{ position: relative; min-height: 560px; display:flex; align-items:flex-end;
-    background: linear-gradient(180deg, rgba(43,33,24,0.35) 0%, rgba(43,33,24,0.85) 100%), url('https://dhiyalernen-cmyk.github.io/nashwan-.github.io/shop.jpg');
-    background-size: cover; background-position: center; border-bottom: 1px solid var(--line); }
-  .hero-content{ position:relative; max-width: 660px; padding: 64px 0 56px; color: var(--parchment); }
-  .badges{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom: 24px; }
-  .pill{ display:inline-flex; align-items:center; gap:7px; background: rgba(239,230,211,0.14); border: 1px solid rgba(239,230,211,0.4); color: var(--parchment); padding: 6px 13px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; }
-  .pill.open{ background: var(--sage); border-color: var(--sage); }
-  .hero h1{ font-size: clamp(2.1rem, 4.6vw, 3.1rem); margin-bottom: 18px; color: var(--parchment); }
-  .hero p.lede{ font-size: 1.12rem; color: rgba(239,230,211,0.9); max-width: 48ch; margin-bottom: 30px; }
-  .hero-actions{ display:flex; flex-wrap:wrap; gap: 14px; }
-  .btn-primary, .btn-secondary{ display:inline-flex; align-items:center; gap:9px; padding: 13px 22px; border-radius: var(--radius); font-weight:700; font-size: 1rem; text-decoration:none; border: 1px solid transparent; cursor:pointer; }
-  .btn-primary{ background: var(--amber); color: var(--ink); }
-  .btn-primary:hover{ background: var(--parchment); }
-  .btn-secondary{ background: transparent; color: var(--parchment); border-color: var(--parchment); }
-  .btn-secondary:hover{ background: var(--parchment); color: var(--ink); }
-  section{ padding: 72px 0; border-bottom: 1px solid var(--line); }
-  .section-head{ max-width: 580px; margin-bottom: 44px; }
-  .section-head h2{ font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin-bottom: 14px; }
-  .section-head p{ color: var(--ink-soft); font-size: 1.05rem; }
-  .about-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items:center; }
-  .about-grid p{ color: var(--ink-soft); font-size: 1.06rem; margin-bottom: 16px; }
-  .about-figure{ border: 1px solid var(--line); border-radius: var(--radius); overflow:hidden; }
-  .about-figure img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .cards-grid{ display:grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-inline-start: 1px solid var(--line); }
-  .card{ padding: 32px 28px; border-inline-end: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .card h3{ font-size: 1.25rem; margin-bottom: 10px; }
-  .card p{ color: var(--ink-soft); font-size: 1rem; }
-  .products-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .product{ background: var(--parchment-dark); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; display:flex; flex-direction:column; gap: 10px; }
-  .product h3{ font-size: 1.15rem; }
-  .product p{ color: var(--ink-soft); font-size: 0.96rem; margin:0; }
-  .product .price{ color: var(--rust); font-weight:700; font-size: 0.95rem; }
-  .location-grid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: stretch; }
-  .map-frame{ border: 1px solid var(--line); border-radius: var(--radius); overflow:hidden; min-height: 340px; }
-  .map-frame iframe{ width:100%; height:100%; min-height:340px; display:block; border:0; }
-  .details-card{ background: var(--parchment-dark); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; display:flex; flex-direction:column; gap: 22px; }
-  .detail-row{ display:flex; gap:14px; align-items:flex-start; }
-  .detail-row .label{ font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 3px; }
-  .detail-row .value{ font-weight:700; font-size:1.06rem; }
-  .detail-row .value small{ display:block; font-weight:400; color:var(--ink-soft); font-size:0.88rem; margin-top:2px; }
-  /* ---- contact form ---- */
-  .form-card{ background: var(--parchment-dark); border: 1px solid var(--line); border-radius: var(--radius); padding: 36px; max-width: 560px; }
-  .field{ margin-bottom: 18px; display:flex; flex-direction:column; gap:6px; }
-  .field label{ font-size: 0.88rem; font-weight:700; color: var(--ink-soft); }
-  .field input, .field textarea, .field select{
-    font-family: 'Tajawal', sans-serif; font-size: 1rem; padding: 11px 13px; border-radius: var(--radius);
-    border: 1px solid var(--line); background: var(--parchment); color: var(--ink);
-  }
-  .field textarea{ min-height: 100px; resize: vertical; }
-  #form-status{ margin-top: 14px; font-size: 0.92rem; font-weight:600; }
-  #form-status.ok{ color: var(--sage); }
-  #form-status.err{ color: #a02c2c; }
-  .contact-cta{ background: var(--ink); color: var(--parchment); border-bottom:none; }
-  .contact-cta .wrap{ display:flex; flex-wrap:wrap; align-items:center; justify-content: space-between; gap: 32px; }
-  .contact-cta h2{ color: var(--parchment); font-size: clamp(1.7rem, 3.4vw, 2.4rem); max-width: 480px; }
-  .contact-cta .cta-buttons{ display:flex; gap:14px; flex-wrap:wrap; }
-  .contact-cta .btn-primary{ background: var(--amber); color: var(--ink); }
-  .contact-cta .btn-secondary{ border-color: var(--parchment); color: var(--parchment); }
-  footer{ padding: 26px 0 34px; background: var(--ink); color: rgba(239,230,211,0.55); font-size: 0.88rem; }
-  @media (max-width: 780px){
-    .cards-grid, .products-grid, .about-grid, .location-grid{ grid-template-columns: 1fr; }
-    .header-inner .brand-sub{ display:none; }
-  }
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="نشوان الصبري لتربية وتسويق الدجاج – جودة عالية وخدمة موثوقة">
+    <meta name="keywords" content="تربية الدواجن, تسويق الدجاج, مزرعة دجاج">
+    <meta name="author" content="Nashwan Al-Sabri">
+    <meta name="google-site-verification" content="CODE_FROM_GOOGLE">
+    <meta charset="UTF-8">
+    <title>Nashwan Al-Sabri - Chicken Breeding & Marketing | نشوان الصبري لتربية وتسويق الدجاج</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img.JPG">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.8;
+            scroll-behavior: smooth;
+            background-color: #f9f9f9;
+            transition: all 0.5s ease;
+        }
+
+        header {
+            position: fixed;
+            justify-content: space-between;
+            top: 0;
+            width: 100%;
+            height: 19%;
+            background: linear-gradient(#314217,#0b1b26);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-between;
+            justify-content: left;
+            align-items: left;
+            list-style: none;
+
+        }
+        ul :hover{
+           opacity: 1;
+
+            
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: #faf6f6;
+            font-weight: 500;
+            font-size: 20px;
+            font-family: system-ui;
+            letter-spacing: 0px;
+            margin:  30px;
+            padding: 6px 15px;
+            display:inline-block;
+            transition: 0.5s;
+            background-color: #314217;
+           
+        }
+
+         nav ul li a:hover{
+            background: #2f52a3;
+            border-radius: 20px;
+            transform: scale(1.2);
+            opacity: 0.5;
+
+         }
+
+        .logo {
+            font-size: 30px;
+            color: #e69500;
+
+
+        }
+
+        .hero {
+            height: 100vh;
+            background: url("images.jpeg") center/cover no-repeat fixed;
+            color: #e69500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero div {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 2s ease;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            
+
+        }
+
+        .btn {
+            background: #e69500;
+            color: white;
+            padding: 12px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffb84d;
+        }
+
+        section {
+            padding: 100px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .services,
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background:  #2f52a3;;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        form button {
+            background: #e69500;
+            color: white;
+            border: none;
+            padding: 12px 40px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: #ffb84d;
+        }
+
+        /* English Styles */
+        body.en {
+            direction: ltr;
+            font-family: Arial, sans-serif;
+        }
+
+        body.en header nav .logo {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            z-index: 1000;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Map */
+        .map {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        function switchLanguage(lang) {
+            if (lang === 'en') {
+                document.body.classList.add('en');
+                document.body.classList.remove('ar');
+            } else {
+                document.body.classList.add('ar');
+                document.body.classList.remove('en');
+            }
+        }
+    </script>
 </head>
-<body>
 
-<header>
-  <div class="wrap header-inner">
-    <div class="brand">
-      <img src="https://dhiyalernen-cmyk.github.io/nashwan-.github.io/logo.JPG" alt="شعار نشوان الصبري">
-      <div class="brand-text">
-        <span class="brand-name">نشوان الصبري</span>
-        <span class="brand-sub">لتربية وتسويق الدجاج</span>
-      </div>
-    </div>
-    <a class="call-btn" id="header-call" href="tel:+967770830922">اتصل بنا</a>
-  </div>
-</header>
+<body class="ar">
 
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-content">
-      <div class="badges">
-        <span class="pill open">مفتوح ٢٤ ساعة، طوال أيام الأسبوع</span>
-        <span class="pill">جودة</span><span class="pill">صحة</span><span class="pill">ثقة</span>
-      </div>
-      <h1 id="hero-title">تربية وتسويق دجاج تثق به في إب</h1>
-      <p class="lede" id="hero-lede">من مزارعنا الخاصة إلى مركز الممدارة لتسويق الدجاج...</p>
-      <div class="hero-actions">
-        <a class="btn-primary" id="hero-call" href="tel:+967770830922">اتصل الآن</a>
-        <a class="btn-secondary" href="#contact">أرسل طلبك</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <header>
 
-<section id="about">
-  <div class="wrap about-grid">
-    <div>
-      <div class="section-head" style="margin-bottom:20px;"><h2>من نحن</h2></div>
-      <p id="about-p1">نحن في مزارع نشوان الصبري لتربية وتسويق الدجاج نعمل على تربية الدواجن بأفضل المعايير الصحية.</p>
-      <p id="about-p2">نلتزم بالجودة والاستدامة لتقديم منتجات موثوقة تلبي احتياجات السوق المحلي.</p>
-    </div>
-    <div class="about-figure">
-      <img src="https://dhiyalernen-cmyk.github.io/nashwan-.github.io/shop.jpg" alt="مركز الممدارة لتسويق الدجاج">
-    </div>
-  </div>
-</section>
+        <div class="logo">نشوان الصبري | Nashwan Al-Sabri
+                            
+        
+        </div>
 
-<section id="services">
-  <div class="wrap">
-    <div class="section-head"><h2>خدماتنا</h2><p>من تربية الدجاج وحتى وصوله إليك.</p></div>
-    <div class="cards-grid">
-      <div class="card"><h3>تربية الدواجن</h3><p>تربية احترافية باستخدام أحدث الأساليب لضمان صحة وجودة الدجاج.</p></div>
-      <div class="card"><h3>التسويق</h3><p>تسويق مباشر وفعّال يربط بين إنتاجنا واحتياجات العملاء دون وسطاء.</p></div>
-      <div class="card"><h3>التوصيل</h3><p>خدمة توصيل سريعة وآمنة إلى جميع المناطق حول إب.</p></div>
-    </div>
-  </div>
-</section>
+        <nav>
+            <ul>
+                <li><a href="home/index.html">الرئيسية / Home</a></li>
+                <li><a href="about/index.html">من نحن / About</a></li>
+                <li><a href="services/index.html">خدماتنا / Services</a></li>
+                <li><a href="products/index.html">منتجاتنا / Products</a></li>
+                <li><a href="contact/index.html">تواصل معنا / Contact</a></li>
 
-<section id="products">
-  <div class="wrap">
-    <div class="section-head"><h2>منتجاتنا</h2><p>تُربّى وتُباع تحت سقف واحد.</p></div>
-    <div class="products-grid" id="products-grid">
-      <!-- wird per JavaScript aus Supabase geladen; Fallback bleibt sichtbar, wenn das fehlschlägt -->
-      <div class="product"><h3>دجاج لاحم عالي الجودة</h3><p>دجاج لحم يُربّى وفق معايير صحية حديثة، جاهز للسوق المحلي.</p></div>
-      <div class="product"><h3>دجاج بيّاض</h3><p>دجاج بياض سليم يُوفّر إنتاجاً ثابتاً وموثوقاً من البيض.</p></div>
-      <div class="product"><h3>ديك بلدي</h3><p>ديك بلدي أصيل، يُربّى ويُسوَّق بنفس مستوى الجودة.</p></div>
-    </div>
-  </div>
-</section>
+                <button onclick="switchLanguage('ar')">AR</button>
+                <button onclick="switchLanguage('en')">EN</button>
+            </ul>
 
-<section id="location">
-  <div class="wrap">
-    <div class="section-head"><h2>موقع المركز</h2><p>مركز الممدارة لتسويق الدجاج، على أطراف إب.</p></div>
-    <div class="location-grid">
-      <div class="map-frame">
-        <iframe src="https://www.google.com/maps?q=12.8773522,45.0079426&hl=ar&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع مركز الممدارة"></iframe>
-      </div>
-      <div class="details-card">
-        <div class="detail-row"><div><div class="label">العنوان</div><div class="value">مركز الممدارة لتسويق الدجاج<small>إب، اليمن</small></div></div></div>
-        <div class="detail-row"><div><div class="label">ساعات العمل</div><div class="value" id="hours-value">مفتوح ٢٤ ساعة<small>طوال أيام الأسبوع</small></div></div></div>
-        <div class="detail-row"><div><div class="label">الهاتف / واتساب</div><div class="value"><a id="phone-link" href="tel:+967770830922" dir="ltr">967 770 830 922+</a></div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="contact">
-  <div class="wrap">
-    <div class="section-head"><h2>تواصل معنا</h2><p>أرسل طلبك أو استفسارك وسنعاود الاتصال بك.</p></div>
-    <form class="form-card" id="contact-form">
-      <div class="field"><label for="name">الاسم</label><input id="name" name="name" required></div>
-      <div class="field"><label for="phone">رقم الهاتف</label><input id="phone" name="phone" required dir="ltr"></div>
-      <div class="field"><label for="product">المنتج المطلوب (اختياري)</label>
-        <select id="product" name="product_interest">
-          <option value="">— اختر —</option>
-          <option>دجاج لاحم عالي الجودة</option>
-          <option>دجاج بيّاض</option>
-          <option>ديك بلدي</option>
-          <option>غير ذلك</option>
-        </select>
-      </div>
-      <div class="field"><label for="message">رسالتك</label><textarea id="message" name="message"></textarea></div>
-      <button type="submit" class="btn-primary">إرسال الطلب</button>
-      <div id="form-status"></div>
-    </form>
-  </div>
-</section>
+        </nav>
 
-<section class="contact-cta">
-  <div class="wrap">
-    <h2>هل ترغب بالشراء بالجملة أو بطلب تربية؟ اتصل بنا مسبقاً.</h2>
-    <div class="cta-buttons">
-      <a class="btn-primary" href="tel:+967770830922" dir="ltr">967 770 830 922+</a>
-      <a class="btn-secondary" href="https://wa.me/967770830922" target="_blank" rel="noopener">راسلنا عبر واتساب</a>
-    </div>
-  </div>
-</section>
+    </header>
 
-<footer><div class="wrap">نشوان الصبري — لتربية وتسويق الدجاج، إب، اليمن</div></footer>
+    <section id="home" class="hero">
+        <div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-<script src="config.js"></script>
-<script>
-  // ---- dynamische Texte aus site_content laden ----
-  async function loadContent(){
-    try{
-      const { data, error } = await supabaseClient.from('site_content').select('key,value');
-      if (error || !data) return;
-      const map = Object.fromEntries(data.map(r => [r.key, r.value]));
-      if (map.hero_title) document.getElementById('hero-title').textContent = map.hero_title;
-      if (map.hero_lede) document.getElementById('hero-lede').textContent = map.hero_lede;
-      if (map.about_p1) document.getElementById('about-p1').textContent = map.about_p1;
-      if (map.about_p2) document.getElementById('about-p2').textContent = map.about_p2;
-      if (map.phone_href){
-        document.getElementById('header-call').href = 'tel:' + map.phone_href;
-        document.getElementById('hero-call').href = 'tel:' + map.phone_href;
-        document.getElementById('phone-link').href = 'tel:' + map.phone_href;
-      }
-      if (map.phone_display) document.getElementById('phone-link').textContent = map.phone_display;
-    }catch(e){ /* Fallback-Text im HTML bleibt sichtbar */ }
-  }
+            <h1>نشوان الصبري لتربية وتسويق الدجاج<br>Nashwan Al-Sabri - Chicken Breeding & Marketing</h1>
+            <p>جودة • صحة • ثقة<br>Quality • Healthy • Trusted</p>
+            <a href="#contact" class="btn">تواصل معنا / Contact Us</a>
+        </div>
+    </section>
+    <section>
+        <div>
+            <span style=" font-size: 32px;">مركز التسوق الخاص بنا/Our centershop</span>
+            <img src="img2.jpeg" width="100%" height="50%">
 
-  // ---- Produkte aus Supabase laden ----
-  async function loadProducts(){
-    try{
-      const { data, error } = await supabaseClient
-        .from('products').select('*').eq('active', true).order('sort_order');
-      if (error || !data || data.length === 0) return;
-      const grid = document.getElementById('products-grid');
-      grid.innerHTML = '';
-      const select = document.getElementById('product');
-      select.innerHTML = '<option value="">— اختر —</option>';
-      data.forEach(p => {
-        grid.innerHTML += `<div class="product"><h3>${p.name}</h3><p>${p.description || ''}</p>${p.price ? `<span class="price">${p.price}</span>` : ''}</div>`;
-        select.innerHTML += `<option>${p.name}</option>`;
-      });
-      select.innerHTML += '<option>غير ذلك</option>';
-    }catch(e){ /* Fallback bleibt sichtbar */ }
-  }
+        </div>
+    </section>
 
-  // ---- Kontaktformular ----
-  document.getElementById('contact-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const status = document.getElementById('form-status');
-    status.textContent = 'جارٍ الإرسال...'; status.className = '';
-    const payload = {
-      name: document.getElementById('name').value,
-      phone: document.getElementById('phone').value,
-      product_interest: document.getElementById('product').value,
-      message: document.getElementById('message').value
-    };
-    const { error } = await supabaseClient.from('messages').insert([payload]);
-    if (error){
-      status.textContent = 'حدث خطأ، يرجى الاتصال بنا مباشرة على الهاتف.'; status.className = 'err';
-    } else {
-      status.textContent = 'تم إرسال طلبك، سنتواصل معك قريباً.'; status.className = 'ok';
-      e.target.reset();
-    }
-  });
+    <section id="about">
+        <h2>من نحن / About Us</h2>
+        <p>نحن في مزارع نشوان الصبري لتربية وتسويق الدجاج نعمل على تربية الدواجن بأفضل المعايير الصحية، مع الالتزام
+            بالجودة
+            والاستدامة لتقديم منتجات موثوقة تلبي احتياجات السوق المحلي.<br>
+            At Nashwan Al-Sabri, we specialize in premium chicken breeding and marketing, ensuring quality and
+            sustainable practices that meet the needs of local markets.</p>
+    </section>
 
-  loadContent();
-  loadProducts();
-</script>
+    <section id="services">
+        <h2>خدماتنا / Our Services</h2>
+        <div class="services">
+            <div class="card">
+                <h3>تربية الدواجن / Breeding</h3>
+                <p>تربية احترافية باستخدام أحدث الأساليب لضمان صحة وجودة الدجاج.<br>Professional chicken breeding with
+                    modern care and health standards.</p>
+            </div>
+            <div class="card">
+                <h3>التسويق / Marketing</h3>
+                <p>تسويق مباشر وفعّال يربط بين المنتجين والعملاء.<br>Direct and effective marketing connecting producers
+                    with buyers.</p>
+            </div>
+            <div class="card">
+                <h3>التوصيل / Delivery</h3>
+                <p>خدمة توصيل سريعة وآمنة إلى جميع المناطق.<br>Reliable and safe delivery service to all locations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>منتجاتنا / Featured Products</h2>
+        <div class="products">
+            <div class="card">دجاج لاحم عالي الجودة / Premium Broiler Chicken</div>
+            <div class="card">دجاج بيّاض / Layer Hens</div>
+            <div class="card">ديك بلدي / Local Rooster</div>
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <h2>تواصل معنا / Contact Us</h2>
+        <form>
+            <input type="text" placeholder="الاسم / Name" required>
+            <input type="email" placeholder="البريد الإلكتروني / Email" required>
+            <textarea rows="5" placeholder="رسالتك / Your Message" required></textarea>
+            <button type="submit">إرسال / Send</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Our location/موقعنا </h2>
+
+     <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2327.099369937539!2d45.0079426!3d12.877352199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3df5f90066c30c9b%3A0x36474242284cc949!2sAl-Mimdara%20chicken%20marketing%20center!5e1!3m2!1sen!2sch!4v1766060314790!5m2!1sen!2sch" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+
+    </section>
+    <Section>
+          <img src="img.JPG" width="500" height="260" draggable="false" style="border-radius: 100px;
+                             box-shadow: 0 0 80px rgb(221, 99, 5); ">
+
+    </Section>
+
+    <a href="https://wa.me/+967 770 830 922" class="whatsapp-btn" target="_blank">📞</a>
+
+    <footer>
+        <p>© 2025 نشوان الصبري لتربية وتسويق الدجاج – جميع الحقوق محفوظة<br>© 2025 Nashwan Al-Sabri - All rights
+            reserved</p>
+    </footer>
 
 </body>
+
 </html>
